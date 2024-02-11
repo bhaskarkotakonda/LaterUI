@@ -22,9 +22,9 @@ function Tile(props) {
             key={index}
             onClick={() => handleTileClick(index)}
           >
-            <div style={styles.tileHeader}>{el.Title}</div>
-            <div style={styles.metadata}>{el.Metadata}n</div>
-            <div style={styles.truncatedText}>{el.Doc}</div>
+            {/* <div style={styles.tileHeader}>{el.Title}</div> */}
+            {/* <div style={styles.metadata}>{el.Metadata}n</div> */}
+            <div style={styles.truncatedText}>{el}</div>
           </div>
         ))}
       </div>

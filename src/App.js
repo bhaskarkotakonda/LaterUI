@@ -32,73 +32,75 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  // const [TagInput, setTagInput] = useState({
+  //   '#Tag1': [{
+  //     Title: 'Title1',
+  //     Metadata : 'Metadata1',
+  //     Doc: 'In the vast expanse of the universe, where galaxies twinkle like diamonds against the velvet sky, /n' +  'there exists an enchanted forest teeming with life. Beneath the canopy of towering trees, a colorful array of creatures frolic and play, their vibrant hues painting a picturesque scene against the lush green backdrop. Butterflies flutter gracefully among the wildflowers, their delicate wings shimmering in the dappled sunlight. Nearby, a majestic elephant trumpets loudly, its tusks gleaming in the golden glow of the setting sun. Further down the path, a curious raccoon peers out from behind a bush, its masked face filled with mischief. As evening falls, the forest comes alive with the melodic chirping of crickets and the haunting call of the nocturnal owl. Stars twinkle overhead like scattered gems, casting a soft glow upon the earth below. And so, the cycle of life continues in this magical realm, where every creature plays a part in the intricate tapestry of natures design. In the vast expanse of the universe, where galaxies twinkle like diamonds against the velvet sky, there exists an enchanted forest teeming with life. Beneath the canopy of towering trees, a colorful array of creatures frolic and play, their vibrant hues painting a picturesque scene against the lush green backdrop. Butterflies flutter gracefully among the wildflowers, their delicate wings shimmering in the dappled sunlight. Nearby, a majestic elephant trumpets loudly, its tusks gleaming in the golden glow of the setting sun. Further down the path, a curious raccoon peers out from behind a bush, its masked face filled with mischief. As evening falls, the forest comes alive with the melodic chirping of crickets and the haunting call of the nocturnal owl. Stars twinkle overhead like scattered gems, casting a soft glow upon the earth below. And so, the cycle of life continues in this magical realm, where every creature plays a part in the intricate tapestry of natures design.In the vast expanse of the universe, where galaxies twinkle like diamonds against the velvet sky, there exists an enchanted forest teeming with life. Beneath the canopy of towering trees, a colorful array of creatures frolic and play, their vibrant hues painting a picturesque scene against the lush green backdrop. Butterflies flutter gracefully among the wildflowers, their delicate wings shimmering in the dappled sunlight. Nearby, a majestic elephant trumpets loudly, its tusks gleaming in the golden glow of the setting sun. Further down the path, a curious raccoon peers out from behind a bush, its masked face filled with mischief. As evening falls, the forest comes alive with the melodic chirping of crickets and the haunting call of the nocturnal owl. Stars twinkle overhead like scattered gems, casting a soft glow upon the earth below. And so, the cycle of life continues in this magical realm, where every creature plays a part in the intricate tapestry of natures design.'    
+  //   }, {
+  //     Title: 'Title2',
+  //     Metadata: 'Metadata2',
+  //     Doc: 'Amidst the bustling city streets, where skyscrapers tower over the bustling crowds, lies a hidden sanctuary of tranquility. In the heart of the metropolis, a secret garden blooms with a riot of colors, its fragrant blossoms perfuming the air with their sweet scent. Here, amid the chaos of urban life, one can find solace in the gentle rustle of leaves and the soothing melody of birdsong. Tall trees provide shade from the relentless sun, while winding paths lead to secluded alcoves perfect for quiet contemplation. Butterflies flit from flower to flower, their delicate wings shimmering in the sunlight like iridescent jewels. Nearby, a babbling brook meanders through the garden, its crystal-clear waters teeming with life. Dragonflies dart overhead, their iridescent wings catching the light as they dance in the breeze. As day turns to night, the garden takes on a mystical aura, with fireflies lighting up the darkness like tiny lanterns. Stars twinkle overhead, casting a soft glow upon the serene landscape below. And so, amidst the chaos of city life, this hidden oasis offers a welcome respite—a reminder of the beauty and wonder that can be found in the most unexpected of places.      '
+  //   }, {
+  //     Title: 'Title3',
+  //     Metadata: 'Metadata3',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }],
+  //   '#Tag2': [{
+  //     Title: 'Title4',
+  //     Metadata : 'Metadata4',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title5',
+  //     Metadata: 'Metadata5',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title6',
+  //     Metadata: 'Metadata6',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }],
+  //   '#Tag3': [{
+  //     Title: 'Title7',
+  //     Metadata : 'Metadata7',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title8',
+  //     Metadata: 'Metadata8',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title9',
+  //     Metadata: 'Metadata9',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }],
+  //   '#Tag4': [{
+  //     Title: 'Title10',
+  //     Metadata : 'Metadata10',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title11',
+  //     Metadata: 'Metadata11',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title12',
+  //     Metadata: 'Metadata12',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }],
+  //   '#Tag5': [{
+  //     Title: 'Title13',
+  //     Metadata : 'Metadata13',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title14',
+  //     Metadata: 'Metadata14',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }, {
+  //     Title: 'Title15',
+  //     Metadata: 'Metadata15',
+  //     Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
+  //   }]
+  // });
   const [TagInput, setTagInput] = useState({
-    '#Tag1': [{
-      Title: 'Title1',
-      Metadata : 'Metadata1',
-      Doc: 'In the vast expanse of the universe, where galaxies twinkle like diamonds against the velvet sky, /n' + 
-            'there exists an enchanted forest teeming with life. Beneath the canopy of towering trees, a colorful array of creatures frolic and play, their vibrant hues painting a picturesque scene against the lush green backdrop. Butterflies flutter gracefully among the wildflowers, their delicate wings shimmering in the dappled sunlight. Nearby, a majestic elephant trumpets loudly, its tusks gleaming in the golden glow of the setting sun. Further down the path, a curious raccoon peers out from behind a bush, its masked face filled with mischief. As evening falls, the forest comes alive with the melodic chirping of crickets and the haunting call of the nocturnal owl. Stars twinkle overhead like scattered gems, casting a soft glow upon the earth below. And so, the cycle of life continues in this magical realm, where every creature plays a part in the intricate tapestry of natures design. In the vast expanse of the universe, where galaxies twinkle like diamonds against the velvet sky, there exists an enchanted forest teeming with life. Beneath the canopy of towering trees, a colorful array of creatures frolic and play, their vibrant hues painting a picturesque scene against the lush green backdrop. Butterflies flutter gracefully among the wildflowers, their delicate wings shimmering in the dappled sunlight. Nearby, a majestic elephant trumpets loudly, its tusks gleaming in the golden glow of the setting sun. Further down the path, a curious raccoon peers out from behind a bush, its masked face filled with mischief. As evening falls, the forest comes alive with the melodic chirping of crickets and the haunting call of the nocturnal owl. Stars twinkle overhead like scattered gems, casting a soft glow upon the earth below. And so, the cycle of life continues in this magical realm, where every creature plays a part in the intricate tapestry of natures design.In the vast expanse of the universe, where galaxies twinkle like diamonds against the velvet sky, there exists an enchanted forest teeming with life. Beneath the canopy of towering trees, a colorful array of creatures frolic and play, their vibrant hues painting a picturesque scene against the lush green backdrop. Butterflies flutter gracefully among the wildflowers, their delicate wings shimmering in the dappled sunlight. Nearby, a majestic elephant trumpets loudly, its tusks gleaming in the golden glow of the setting sun. Further down the path, a curious raccoon peers out from behind a bush, its masked face filled with mischief. As evening falls, the forest comes alive with the melodic chirping of crickets and the haunting call of the nocturnal owl. Stars twinkle overhead like scattered gems, casting a soft glow upon the earth below. And so, the cycle of life continues in this magical realm, where every creature plays a part in the intricate tapestry of natures design.'    
-    }, {
-      Title: 'Title2',
-      Metadata: 'Metadata2',
-      Doc: 'Amidst the bustling city streets, where skyscrapers tower over the bustling crowds, lies a hidden sanctuary of tranquility. In the heart of the metropolis, a secret garden blooms with a riot of colors, its fragrant blossoms perfuming the air with their sweet scent. Here, amid the chaos of urban life, one can find solace in the gentle rustle of leaves and the soothing melody of birdsong. Tall trees provide shade from the relentless sun, while winding paths lead to secluded alcoves perfect for quiet contemplation. Butterflies flit from flower to flower, their delicate wings shimmering in the sunlight like iridescent jewels. Nearby, a babbling brook meanders through the garden, its crystal-clear waters teeming with life. Dragonflies dart overhead, their iridescent wings catching the light as they dance in the breeze. As day turns to night, the garden takes on a mystical aura, with fireflies lighting up the darkness like tiny lanterns. Stars twinkle overhead, casting a soft glow upon the serene landscape below. And so, amidst the chaos of city life, this hidden oasis offers a welcome respite—a reminder of the beauty and wonder that can be found in the most unexpected of places.      '
-    }, {
-      Title: 'Title3',
-      Metadata: 'Metadata3',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }],
-    '#Tag2': [{
-      Title: 'Title4',
-      Metadata : 'Metadata4',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title5',
-      Metadata: 'Metadata5',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title6',
-      Metadata: 'Metadata6',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }],
-    '#Tag3': [{
-      Title: 'Title7',
-      Metadata : 'Metadata7',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title8',
-      Metadata: 'Metadata8',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title9',
-      Metadata: 'Metadata9',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }],
-    '#Tag4': [{
-      Title: 'Title10',
-      Metadata : 'Metadata10',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title11',
-      Metadata: 'Metadata11',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title12',
-      Metadata: 'Metadata12',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }],
-    '#Tag5': [{
-      Title: 'Title13',
-      Metadata : 'Metadata13',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title14',
-      Metadata: 'Metadata14',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }, {
-      Title: 'Title15',
-      Metadata: 'Metadata15',
-      Doc: 'Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1Doc1'    
-    }]
+    '#Tag1':["Doc1"]
   });
   const [activeTile, setActiveTile] = useState(0);
   const [selectedTagIndex, setselectedTagIndex] = useState(0);
@@ -116,7 +118,7 @@ function ResponsiveDrawer(props) {
           .catch(error => {
             console.error('Error fetching data:', error);
           });
-      }, 6000);
+      }, 30000);
     }
   }, []);
 
@@ -236,7 +238,7 @@ function ResponsiveDrawer(props) {
        {/* second bar */}
       <Box
         component="main"
-        sx={{ marginTop:'24px', flexGrow: 1, p: 3, width: { sm: 300 }}}
+        sx={{ marginTop:'24px', flexGrow: 1, p: 3, width: { sm: 250 }}}
       >
         <Tile activeTile= {activeTile} setActiveTile={setActiveTile} doc={TagInput[Object.keys(TagInput)[selectedTagIndex]]}/> 
       </Box>
@@ -250,6 +252,7 @@ function ResponsiveDrawer(props) {
             p: 3,
             width: { sm: 500 },
             display: 'flex',
+            marginLeft: '20px',
             flexDirection: 'column', // Setting flex direction to column
             alignItems: 'top',
             wordWrap: 'break-word', // or whiteSpace: 'pre-line'
@@ -266,7 +269,7 @@ function ResponsiveDrawer(props) {
         >
           <Box sx={{ overflowY: 'auto', flexGrow: 1 }}>
             <Typography paragraph>
-              {TagInput[Object.keys(TagInput)[selectedTagIndex]][activeTile].Doc}
+              {TagInput[Object.keys(TagInput)[selectedTagIndex]][activeTile]}
             </Typography>
           </Box>
       </Box>
