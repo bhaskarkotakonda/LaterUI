@@ -118,7 +118,7 @@ function ResponsiveDrawer(props) {
           .catch(error => {
             console.error('Error fetching data:', error);
           });
-      }, 30000);
+      }, 10000);
     }
   }, []);
 
